@@ -9,6 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class CardsComponent implements OnInit {
 
   type:string = '';
+  key1='';
+  key2='';
+  pkey1='';
+  pkey2='';
   constructor(private router: Router, private route:ActivatedRoute) { }
   ngOnInit() {
     // Seldom
@@ -16,6 +20,15 @@ export class CardsComponent implements OnInit {
     //Usually
     this.route.params.subscribe((params)=>{
           this.type = params['type'];
+          this.key1 = params['key1'];
+          this.key2 = params['key1'];
+    });
+
+
+    this.route.queryParams.subscribe((params)=>{
+          this.pkey1 = params['pkey1'];
+          this.pkey2 = params['pkey2'];
+
     });
   }
 
