@@ -2,13 +2,13 @@
   {{title}}
 </h1>
 <ul>
-  <li><a routerLink="/" routerLinkActive='active' [routerLinkActiveOptions]='{exact:true}'>
+  <li routerLinkActive='active' [routerLinkActiveOptions]='{exact:true}'><a routerLink="/">
     Home</a>
   </li>
-  <li><a routerLink="/page1" routerLinkActive='active'>
+  <li routerLinkActive='active'><a routerLink="/page1">
     page1</a>
   </li>
-  <li><a [routerLink]="getUrl()" routerLinkActive='active'>
+  <li routerLinkActive='active'><a [routerLink]="getUrl()">
     page2</a>
   </li>
 </ul>
