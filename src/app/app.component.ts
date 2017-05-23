@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
+
+  getUrl(){
+    let url =[];
+    url.push('/page2');
+    return url;
+  }
 }
