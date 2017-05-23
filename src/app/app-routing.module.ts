@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {Route, Routes,  RouterModule} from '@angular/router';
 import { Page1Component } from 'app/page1/page1.component';
 import { Page2Component } from 'app/page2/page2.component';
+import {fallbackRoute} from 'app/shared/fallback-Rout';
 
 const routes: Routes = [
   {path:'' , redirectTo:'/page1' , pathMatch: 'full'},
@@ -11,7 +12,7 @@ const routes: Routes = [
     {
     path: 'page2', component: Page2Component
   },
-  {path:'**' , redirectTo:'/' , pathMatch: 'full'},
+  fallbackRoute
 ];
 
 @NgModule({
