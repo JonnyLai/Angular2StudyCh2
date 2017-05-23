@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {Route, RouterModule, Routes} from '@angular/router';
+import {PreloadAllModules, Route,  RouterModule,  Routes} from '@angular/router';
 import {CardsComponent} from 'app/cards/cards.component';
 import {DashboardComponent} from 'app/dashboard/dashboard.component';
 import {fallbackRoute} from 'app/shared/fallback-rout';
@@ -14,7 +14,12 @@ const routes: Routes = [
 
 @NgModule({
   imports:
-      [RouterModule.forRoot(routes, {useHash: false, enableTracing: false})],
+      [RouterModule.forRoot(routes, {
+        useHash: false,
+        enableTracing: false,
+        preloadingStrategy:PreloadAllModules
+
+      })],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
