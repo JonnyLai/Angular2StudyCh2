@@ -1,3 +1,4 @@
+import {ActivatedRoute, Router} from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardsComponent implements OnInit {
 
-  constructor() { }
-
+  type = 0;
+  constructor(private router: Router, private route:ActivatedRoute) { }
   ngOnInit() {
+    // Seldom
+    //this.type = this.route.snapshot['type'];
+    //Usually
+    this.route.params.subscribe((params)=>{
+          this.type = params['type'];
+    });
   }
 
 }
