@@ -27,8 +27,17 @@ export class Classic2Component implements OnInit {
           this.fb.control('address1'),
           this.fb.control('address2')
         ]
-      )
+      ),
+      group1: this.fb.group({
+        sample1: this.fb.control('sample 1'),
+        sample2: this.fb.control('sample 2')
+      })
     });
+  }
+
+  addSample() {
+    const group1 = this.form.controls.group1 as FormGroup;
+    group1.addControl('sample3', this.fb.control('sample 3'));
   }
 
   addNewAddress() {
