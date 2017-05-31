@@ -1,11 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm, FormGroup, FormBuilder, Validators, FormArray } from "@angular/forms";
+import { NgForm, FormGroup, FormBuilder, Validators, FormArray, AbstractControl } from "@angular/forms";
 
+
+function myValidFunction(control: AbstractControl) {
+  if (control.value.indexOf('Jonny') === -1) {
+    return {
+      ErrorCode: 1,
+      ErrorMsg: 'Must include "Jonny" '
+    };
+  } else {
+    return null;
+  }
+}
 @Component({
   selector: 'app-classic2',
   templateUrl: './classic2.component.html',
   styleUrls: ['./classic2.component.css']
 })
+
 export class Classic2Component implements OnInit {
   data: any = {
     title: 'Jonny',
@@ -17,7 +29,7 @@ export class Classic2Component implements OnInit {
   ngOnInit() {
     this.form = this.fb.group({
       title: ['Jonny',
-        [Validators.required, Validators.minLength(3)]
+        [Validators.required, Validators.minLength(3), myValidFunction]
       ],
       description: ['Hello',
         [Validators.required]
