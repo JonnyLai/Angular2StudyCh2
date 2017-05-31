@@ -12,7 +12,7 @@ import { CardsComponent } from './cards/cards.component';
 import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component';
 import { LoginGuard } from 'app/login.guard';
-import { ClassicComponent } from './classic/classic.component';
+import { ClassicComponent } from "app/forms/classic/classic.component";
 
 @NgModule({
   declarations: [
