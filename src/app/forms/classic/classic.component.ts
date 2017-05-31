@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./classic.component.css']
 })
 export class ClassicComponent implements OnInit {
-
+  title = "Hello Jonny";
+  description = "my description";
   constructor() { }
 
   ngOnInit() {
