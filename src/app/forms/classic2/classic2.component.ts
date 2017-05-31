@@ -13,15 +13,19 @@ export class Classic2Component implements OnInit {
   };
   form: FormGroup;
   constructor(private fb: FormBuilder) { }
-
+  //Reactive Form
   ngOnInit() {
     this.form = this.fb.group({
       title: ['Jonny',
-      [Validators.required , Validators.minLength(3)]
+        [Validators.required, Validators.minLength(3)]
       ],
       description: ['Hello',
-      [Validators.required]
-      ]
+        [Validators.required]
+      ],
+      addresses: this.fb.group({
+        address1: 'address1',
+        address2: 'address2'
+      })
     });
   }
 }
