@@ -3,6 +3,11 @@
     <h5 class="mt0">Classic form controls and custom variants</h5>
     <p class="mb-lg">Standard Bootstrap form and input controls with customized UI variations</p>
     <pre>{{f.value | json}}
+                          valid/invalid = {{mTitle.valid}} / {{mTitle.invalid}}
+                          dirty/pristine = {{mTitle.dirty}} / {{mTitle.pristine}}
+                          touched/untouched = {{mTitle.touched}} / {{mTitle.untouched}}
+                          enabled/disabled = {{mTitle.enabled}} / {{mTitle.disabled}}
+                          errors = {{mTitle.errors | json}}
             </pre>
     <div class="card">
       <div class="card-body">
