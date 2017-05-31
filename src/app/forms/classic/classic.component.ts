@@ -10,7 +10,11 @@ export class ClassicComponent implements OnInit {
   title = "Hello Jonny";
   description = "my description";
   //資料模型 data Model
-  data: any = {};
+  data: any = {
+    title:'',
+    description:[]
+  };
+  list = [1, 2];
   constructor() { }
 
   ngOnInit() {
@@ -20,4 +24,7 @@ export class ClassicComponent implements OnInit {
     console.log(f.value);
   }
 
+  addNew() {
+    this.list.push(0);
+  }
 }
