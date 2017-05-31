@@ -12,7 +12,7 @@
             </pre>
     <div class="card">
       <div class="card-body">
-        <form method="get" action="/" class="form-horizontal" #f='ngForm'>
+        <form method="get" action="/" class="form-horizontal" (ngSubmit)="doSubmit(f)" #f='ngForm'>
           <fieldset>
             <div class="form-group" [class.has-error]="mTitle.invalid">
               <label class="col-sm-2 control-label">Title</label>
@@ -47,6 +47,7 @@
               </div>
             </div>
           </fieldset>
+          <input type="submit" value="送出" class="btn btn-info">
           <fieldset>
             <div class="form-group">
               <label for="input-id-1" class="col-sm-2 control-label">Label focus</label>
