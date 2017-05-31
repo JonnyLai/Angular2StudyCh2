@@ -1,5 +1,6 @@
 import { ActivatedRoute, Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { BlockComponent } from "app/block/block.component";
 
 @Component({
   selector: 'app-cards',
@@ -13,6 +14,13 @@ export class CardsComponent implements OnInit {
   key2 = '';
   pkey1 = '';
   pkey2 = '';
+
+  @ViewChild('block1')
+  block1: BlockComponent;
+
+  @ViewChild(BlockComponent)
+  block2: BlockComponent;
+
   constructor(private router: Router, private route: ActivatedRoute) {
     console.log(localStorage.getItem('account'));
     console.log(localStorage.getItem('pw'));
@@ -38,6 +46,12 @@ export class CardsComponent implements OnInit {
   goCardsAddOne(num) {
     let newVal = parseInt(this.type, 10) + num;
     this.router.navigate(['/cards', newVal]);
+  }
+
+  ngAfterViewInit() {
+    // this.block1.title='Hello Jonny';
+    this.block2.title='Hello Jonny2';
+
   }
 
 }
