@@ -1,17 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm, FormGroup, FormBuilder, Validators, FormArray, AbstractControl } from "@angular/forms";
+import { myValidFunction } from "app/shared/myValidFunction";
 
 
-function myValidFunction(control: AbstractControl) {
-  if (control.value.indexOf('Jonny') === -1) {
-    return {
-      ErrorCode: 1,
-      ErrorMsg: 'Must include "Jonny" '
-    };
-  } else {
-    return null;
-  }
-}
+
 @Component({
   selector: 'app-classic2',
   templateUrl: './classic2.component.html',
