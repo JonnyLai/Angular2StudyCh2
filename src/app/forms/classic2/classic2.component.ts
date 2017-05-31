@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from "@angular/forms";
+import { NgForm, FormGroup, FormBuilder, Validators } from "@angular/forms";
 
 @Component({
   selector: 'app-classic2',
@@ -7,10 +7,22 @@ import { NgForm } from "@angular/forms";
   styleUrls: ['./classic2.component.css']
 })
 export class Classic2Component implements OnInit {
-
-  constructor() { }
+  data: any = {
+    title: 'Jonny',
+    description: 'Hello'
+  };
+  form: FormGroup;
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.form = this.fb.group({
+      title: ['Jonny',
+      [Validators.required , Validators.minLength(3)]
+      ],
+      description: ['Hello',
+      [Validators.required]
+      ]
+    });
   }
 }
 
